@@ -1,0 +1,82 @@
+API KEY = AIzaSyD89WsuuRbGk2tUGTksQXpgxuN6HJ9_-oM
+
+
+// Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+
+// Add a marker in UNTAD 
+        LatLng untad = new LatLng(-0.83643, 119.89369);
+        mMap.addMarker(new MarkerOptions().position(untad).title("Marker in Untad"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(untad));
+
+
+
+ BitmapDrawable bitmapStart = (BitmapDrawable)getResources().getDrawable(R.drawable.pin_map_hitam);
+        BitmapDrawable bitmapDes = (BitmapDrawable)getResources().getDrawable(R.drawable.pin_map_merah);
+        Bitmap s = bitmapStart.getBitmap();
+        Bitmap d = bitmapDes.getBitmap();
+        Bitmap markerStart = Bitmap.createScaledBitmap(s, lebar, tinggi, false);
+        Bitmap markerDes = Bitmap.createScaledBitmap(d, lebar, tinggi, false);
+
+
+
+ int tinggi = 100;
+        int lebar = 100;
+        BitmapDrawable bitmapDraw = (BitmapDrawable)getResources().getDrawable(R.drawable.pin_map_hitam);
+        Bitmap b= bitmapDraw.getBitmap();
+        Bitmap markerKecil = Bitmap.createScaledBitmap(b, lebar, tinggi, false);
+
+
+
+
+
+
+ //Add a marker in UNTAD and move the camera
+        LatLng untad = new LatLng(-0.83649, 119.89369);
+        LatLng vatulemo = new LatLng(-0.90019, 119.88957);
+
+        //custom size marker
+        int tinggi = 100;
+        int lebar = 100;
+
+        BitmapDrawable bitmapStart = (BitmapDrawable)getResources().getDrawable(R.drawable.pin_map_hitam);
+        BitmapDrawable bitmapDes = (BitmapDrawable)getResources().getDrawable(R.drawable.pin_map_merah);
+        Bitmap s = bitmapStart.getBitmap();
+        Bitmap d = bitmapDes.getBitmap();
+        Bitmap markerStart = Bitmap.createScaledBitmap(s, lebar, tinggi, false);
+        Bitmap markerDes = Bitmap.createScaledBitmap(d, lebar, tinggi, false);
+
+        //Add Marker to map
+        mMap.addMarker(new MarkerOptions().position(untad).title("Marker in UNTAD")
+        .snippet("Ini adalah kampus kami")
+        .icon(BitmapDescriptorFactory.fromBitmap(markerStart)));
+
+        mMap.addMarker(new MarkerOptions().position(vatulemo).title("Marker in Vatulemo")
+        .snippet("Ini adalah Taman Vatulemo")
+        .icon(BitmapDescriptorFactory.fromBitmap(markerDes)));
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(untad, 11,5f));
+
+
+
+
+      mMap.addPolyline(new PolylineOptions().add(
+                home,
+                new LatLng(-0.836341, 119.892311),
+                new LatLng(-0.836545, 119.892279),
+                new LatLng(-0.836384, 119.889565),
+                new LatLng(-0.836363, 119.889340),
+                new LatLng(-0.836282, 119.889233),
+                new LatLng(-0.836282, 119.889233),
+                new LatLng(-0.836204, 119.883431),
+                new LatLng(-0.836743, 119.883487),
+                new LatLng(-0.839093, 119.883360),
+                new LatLng(-0.841530, 119.883290),
+                new LatLng(-0.841571, 119.884040),
+                vatulemo
+        ).width(10)
+                .color(Color.BLUE)
+        );
